@@ -19,6 +19,7 @@ const NAV: NavItem[] = [
   { label: "Minha agenda", href: "/agenda", roles: ["barber", "admin"] },
   { label: "Jornada", href: "/jornada", roles: ["barber", "admin"] },
   { label: "Folgas", href: "/folgas", roles: ["barber", "admin"] },
+  { label: "Mensalistas", href: "/mensalistas", roles: ["barber", "admin"] },
   { label: "Barbeiros", href: "/admin/barbeiros", roles: ["admin"] },
   { label: "Serviços", href: "/admin/servicos", roles: ["admin"] },
 ]

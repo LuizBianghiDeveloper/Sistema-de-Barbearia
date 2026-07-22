@@ -236,8 +236,9 @@ Publicação em produção (**Supabase Cloud** + **Vercel**) com passo a passo, 
 | ✅ Agendamento | Fluxo do cliente + cancelamento |
 | ✅ Painel do barbeiro | Agenda dia/semana + cliente avulso |
 | ✅ Entrega | Testes, CI e guia de deploy |
+| ✅ Mensalistas | Reserva de horário **fixo semanal** recorrente (extra pós-MVP) |
 
-**Evoluções futuras** (fora do MVP): pagamento/sinal online · notificações por WhatsApp/e-mail · avaliações · programa de fidelidade · relatórios.
+**Evoluções futuras**: pagamento/sinal online · notificações por WhatsApp/e-mail · avaliações · programa de fidelidade · relatórios.
 
 ---
 

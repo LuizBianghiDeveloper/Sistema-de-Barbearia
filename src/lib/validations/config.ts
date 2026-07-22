@@ -54,6 +54,23 @@ export const folgaSchema = z
 export type FolgaInput = z.infer<typeof folgaSchema>
 
 // Versão usada no formulário (o barber_id vem por contexto, não do form).
+// Mensalista — reserva fixa semanal
+const dataRegex = /^\d{4}-\d{2}-\d{2}$/
+export const reservaFixaFormSchema = z.object({
+  service_id: uuidish,
+  cliente_nome: z.string().trim().min(2, "Informe o nome do cliente."),
+  cliente_telefone: z.string().trim().max(20).optional(),
+  dia_semana: z.number().int().min(0).max(6),
+  hora_inicio: z.string().regex(horaRegex, "Horário inválido."),
+  data_inicio: z.string().regex(dataRegex, "Data inválida."),
+  data_fim: z
+    .string()
+    .regex(dataRegex, "Data inválida.")
+    .optional()
+    .or(z.literal("")),
+})
+export type ReservaFixaFormInput = z.infer<typeof reservaFixaFormSchema>
+
 export const folgaFormSchema = z
   .object({
     data: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Data inválida."),

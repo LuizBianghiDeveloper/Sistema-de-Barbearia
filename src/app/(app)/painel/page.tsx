@@ -55,6 +55,13 @@ const FEATURES: Feature[] = [
     roles: ["barber", "admin"],
   },
   {
+    title: "Mensalistas",
+    description: "Horários fixos reservados toda semana.",
+    href: "/mensalistas",
+    icon: CalendarClock,
+    roles: ["barber", "admin"],
+  },
+  {
     title: "Barbeiros",
     description: "Cadastre e gerencie os profissionais.",
     href: "/admin/barbeiros",
