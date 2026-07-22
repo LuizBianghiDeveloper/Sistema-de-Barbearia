@@ -237,8 +237,9 @@ Publicação em produção (**Supabase Cloud** + **Vercel**) com passo a passo, 
 | ✅ Painel do barbeiro | Agenda dia/semana + cliente avulso |
 | ✅ Entrega | Testes, CI e guia de deploy |
 | ✅ Mensalistas | Reserva de horário **fixo semanal** recorrente (extra pós-MVP) |
+| ✅ Lembretes | Lembrete automático por **WhatsApp** (Z-API) X horas antes, via cron |
 
-**Evoluções futuras**: pagamento/sinal online · notificações por WhatsApp/e-mail · avaliações · programa de fidelidade · relatórios.
+**Evoluções futuras**: pagamento/sinal online · avaliações · programa de fidelidade · relatórios · página pública.
 
 ---
 

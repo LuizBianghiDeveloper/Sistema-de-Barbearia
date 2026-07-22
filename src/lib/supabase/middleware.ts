@@ -37,6 +37,7 @@ export async function updateSession(request: NextRequest) {
   const { pathname } = request.nextUrl
   const isPublic =
     pathname === "/" ||
+    pathname.startsWith("/api") || // rotas de API têm auth própria
     pathname.startsWith("/login") ||
     pathname.startsWith("/cadastro") ||
     pathname.startsWith("/recuperar-senha") ||

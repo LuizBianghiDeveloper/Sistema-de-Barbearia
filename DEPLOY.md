@@ -59,9 +59,27 @@ desligada em `supabase/config.toml`).
    | `NEXT_PUBLIC_SUPABASE_URL` | Project URL do Supabase |
    | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | chave anon |
    | `SUPABASE_SERVICE_ROLE_KEY` | chave service_role (secreta) |
+   | `REMINDER_HOURS_BEFORE` | antecedência do lembrete (ex.: `3`) |
+   | `CRON_SECRET` | um segredo forte (protege a rota do cron) |
+   | `ZAPI_INSTANCE_ID` / `ZAPI_TOKEN` / `ZAPI_CLIENT_TOKEN` | credenciais Z-API (WhatsApp) |
 
 3. Faça o deploy. A cada push em `main`, a Vercel publica produção; PRs geram Preview.
 4. (Opcional) Configure o **domínio** em Settings → Domains e atualize o Site URL do Auth.
+
+## 4b. Lembretes automáticos por WhatsApp (Z-API)
+
+O sistema envia um lembrete pelo WhatsApp **X horas antes** de cada agendamento
+confirmado (`REMINDER_HOURS_BEFORE`, padrão 3h).
+
+- **Agendador:** `vercel.json` já define um **Vercel Cron** que chama
+  `/api/cron/reminders` a cada 15 min. A Vercel envia o header
+  `Authorization: Bearer <CRON_SECRET>`, então basta definir `CRON_SECRET`.
+- **WhatsApp (Z-API):** crie uma instância em https://z-api.io, conecte o número
+  (QR code) e copie `Instance ID`, `Token` e o `Client-Token` (conta) para as
+  variáveis `ZAPI_*`. Sem elas, o sistema roda em **modo simulação** (só registra
+  no log, não envia).
+- **Teste manual:** `GET /api/cron/reminders?secret=<CRON_SECRET>` retorna um
+  resumo `{ verificados, enviados, simulados, ... }`.
 
 ## 5. Criar o primeiro admin
 
