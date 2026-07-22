@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation"
 import { getSessionProfile } from "@/lib/auth"
 import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 
 export default async function AppLayout({
   children,
@@ -16,6 +17,7 @@ export default async function AppLayout({
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
         {children}
       </main>
+      <SiteFooter />
     </div>
   )
 }

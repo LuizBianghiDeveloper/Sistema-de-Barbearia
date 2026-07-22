@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { Scissors } from "lucide-react";
 import { getSessionProfile } from "@/lib/auth";
 import { Brand } from "@/components/brand";
+import { SiteFooter } from "@/components/site-footer";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -53,6 +54,8 @@ export default async function Home() {
           </Link>
         </div>
       </section>
+
+      <SiteFooter className="border-0" />
     </main>
   );
 }

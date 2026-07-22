@@ -14,9 +14,15 @@ export default async function AuthLayout({
     <div className="flex min-h-full flex-1 flex-col items-center justify-center gap-8 px-4 py-12">
       <Brand href="/" size="lg" />
       <div className="w-full max-w-sm">{children}</div>
-      <p className="text-xs text-muted-foreground">
-        Lucas Simões Barbearia
-      </p>
+      <div className="space-y-1 text-center text-xs text-muted-foreground">
+        <p>Lucas Simões Barbearia</p>
+        <p>
+          Desenvolvido por{" "}
+          <span className="font-medium text-foreground/80">
+            Bianghi Innovations
+          </span>
+        </p>
+      </div>
     </div>
   )
 }
