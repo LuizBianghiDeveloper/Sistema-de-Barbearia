@@ -35,7 +35,12 @@ export function Brand({
         className={cn("rounded-full", cfg.img)}
       />
       {cfg.showText && (
-        <span className={cn("brand", cfg.text)}>Lucas Simões</span>
+        <span className="flex flex-col leading-none">
+          <span className={cn("brand", cfg.text)}>Lucas Simões</span>
+          <span className="mt-0.5 text-[0.6rem] font-medium uppercase tracking-[0.35em] text-primary">
+            Barbearia
+          </span>
+        </span>
       )}
     </Link>
   )
