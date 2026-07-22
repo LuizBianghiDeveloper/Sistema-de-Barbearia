@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Brand } from "@/components/brand"
+import { HeaderBackButton } from "@/components/header-back-button"
 import { SignOutMenuItem } from "@/components/sign-out-button"
 import { type Role, type SessionProfile } from "@/lib/auth"
 import {
@@ -40,7 +41,8 @@ export function SiteHeader({ profile }: { profile: SessionProfile }) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center gap-6 px-4 sm:px-6">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center gap-3 px-4 sm:gap-6 sm:px-6">
+        <HeaderBackButton />
         <Brand href="/painel" size="md" />
 
         <nav className="hidden items-center gap-1 md:flex">
