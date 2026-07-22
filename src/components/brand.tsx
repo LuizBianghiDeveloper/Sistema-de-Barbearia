@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Scissors } from "lucide-react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 export function Brand({
@@ -11,25 +11,32 @@ export function Brand({
   className?: string
   size?: "sm" | "md" | "lg"
 }) {
-  const sizes = {
-    sm: { text: "text-lg", icon: "size-4" },
-    md: { text: "text-xl", icon: "size-5" },
-    lg: { text: "text-3xl", icon: "size-7" },
+  const cfg = {
+    sm: { img: "size-8", text: "text-base", showText: true },
+    md: { img: "size-10", text: "text-xl", showText: true },
+    lg: { img: "size-28", text: "text-2xl", showText: false },
   }[size]
 
   return (
     <Link
       href={href}
       className={cn(
-        "brand inline-flex items-center gap-2 text-foreground transition-opacity hover:opacity-90",
-        sizes.text,
+        "inline-flex items-center gap-3 text-foreground transition-opacity hover:opacity-90",
+        size === "lg" && "flex-col gap-2",
         className
       )}
     >
-      <Scissors className={cn("text-primary", sizes.icon)} />
-      <span>
-        Barbearia<span className="text-primary">.</span>
-      </span>
+      <Image
+        src="/logo.png"
+        alt="Lucas Simões Barbearia"
+        width={224}
+        height={224}
+        priority
+        className={cn("rounded-full", cfg.img)}
+      />
+      {cfg.showText && (
+        <span className={cn("brand", cfg.text)}>Lucas Simões</span>
+      )}
     </Link>
   )
 }

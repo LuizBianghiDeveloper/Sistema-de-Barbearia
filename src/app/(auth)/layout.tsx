@@ -15,7 +15,7 @@ export default async function AuthLayout({
       <Brand href="/" size="lg" />
       <div className="w-full max-w-sm">{children}</div>
       <p className="text-xs text-muted-foreground">
-        Barbearia · sistema de agendamento
+        Lucas Simões Barbearia
       </p>
     </div>
   )

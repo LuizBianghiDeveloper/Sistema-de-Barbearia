@@ -20,8 +20,8 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Barbearia — Agendamento",
-  description: "Sistema de agendamento para barbearia",
+  title: "Lucas Simões Barbearia",
+  description: "Agendamento online — Lucas Simões Barbearia",
 };
 
 export default function RootLayout({
